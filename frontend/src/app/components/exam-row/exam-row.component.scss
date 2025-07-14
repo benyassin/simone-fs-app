@@ -1,0 +1,46 @@
+.exam-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr 1fr 1fr 1.5fr;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background-color: #fafafa;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@mixin status-badge($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 0.3rem 0.7rem;
+  border-radius: 1rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  width: fit-content;
+}
+
+.status-confirmed {
+  @include status-badge(#e6f5ec, #2e7d32);
+}
+
+.status-to-organize {
+  @include status-badge(#fff4e5, #ef6c00);
+}
+
+.status-cancelled {
+  @include status-badge(#fdecea, #d32f2f);
+}
+
+.status-pending {
+  @include status-badge(#e1e1e0, #0288d1);
+}
+
+.status-default {
+  @include status-badge(#f5f5f5, #757575);
+}

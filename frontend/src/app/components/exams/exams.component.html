@@ -1,0 +1,16 @@
+<div class="exams-wrapper">
+  <div class="header">
+    <div>
+      <h2>Mes examens</h2>
+      <p class="subtitle">
+        <strong>{{ exams().length }}</strong>
+        {{ exams().length < 2 ? 'examen à venir' : 'examens à venir' }}
+      </p>
+    </div>
+    <button class="add-button" (click)="addExam()">Organiser un examen</button>
+  </div>
+
+  <div class="exam-table">
+    <app-exam-row *ngFor="let exam of exams()" [exam]="exam"></app-exam-row>
+  </div>
+</div>
